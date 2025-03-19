@@ -41,6 +41,11 @@ jobs:
           echo "Esto es el valor de username: ${{ env.username }}"
           echo "Esto es el valor de contrasena: ${{ env.contrasena }}"
 
+      - name: "Mostrando valores solo si el usuario es correcto"
+        if: ${{ env.username != '' && env.contrasena != '' }}
+        run: |
+          echo "Si existe usuario y contrasena"
+
       - name: "Mostrando variables por defecto"
         run: |
           echo "Eventos: ${{toJson(github.event) }}"
