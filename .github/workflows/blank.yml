@@ -40,6 +40,7 @@ jobs:
 
           echo "Esto es el valor de username: ${{ env.username }}"
           echo "Esto es el valor de contrasena: ${{ env.contrasena }}"
+          echo "Esto es el Project Version: ${{ vars.PROJECT_VERSION }}"          
 
       - name: "Mostrando valores solo si el usuario es correcto"
         if: ${{ env.username != '' && env.contrasena != '' }}
